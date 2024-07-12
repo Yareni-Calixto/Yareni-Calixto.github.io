@@ -1,0 +1,380 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+header .navegacion{
+    top: 0; /* Fija la barra en la parte superior */
+    
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+.content{
+    background-color: #151517;
+    min-height: 80px;
+
+}
+.menu{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /*Para dejar una separacion en los elementos*/
+    
+}
+.logo{
+    font-size: 21px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+.menu .navbar ul li a{
+    font-size: 18px; /*Tamaño en los enlaces*/
+    padding: 20px;
+    color: #ffffff;
+    display: block;
+    font-weight: bold;
+}
+.menu .navbar ul li a:hover{
+    color: white;
+    background-color: #c68918;
+}
+
+#menu {
+    display: none;
+}
+.menu-icono{
+    width: 25px;
+}
+
+.menu label{
+    cursor: pointer; /*Pone una manita sobre la imagen*/
+    display: none; /*Para ocultar imagen*/
+}
+
+/*Carrito de ventas*/
+.submenu {
+    position: relative;
+}
+  
+.submenu #carrito {
+    display: none;
+    
+}
+  
+.submenu:hover #carrito {
+    display: block;
+    position: absolute;
+    right: 0;
+    backdrop-filter: blur(10px);
+    top: 100%;
+    z-index: 1;
+    background-color: #4e4b5076;
+    padding: 20px;
+    min-width: 400px;
+    transition: 3s;
+}
+table{
+    width: 100%;
+
+}
+th, td {
+    color: #ffffff;
+}
+
+.borrar {
+    background-color: #111111;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+
+@media(max-width:991px) {
+    .content{
+        min-height: 70px;
+    }
+    .menu{
+        top: 0;
+        padding: 20px;
+    }
+    .menu label {
+        display: initial;
+
+    }
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #151517;
+        display: none;
+    }
+
+    .menu .navbar ul li{
+        width: 100%;
+
+    }
+    #menu:checked ~ .navbar{   /*Aqui vamos a hacer funcional el menu*/
+        display: initial;
+    }
+}
+
+
+.seccion-1{
+    background-image: url(img/img-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; /*Para cubrir toda la página*/
+    height: 600px;
+}
+
+/*Texto principal*/
+.text-principal{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.text-principal h3{
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+
+
+
+/*Seccion 2*/
+
+.seccion-2 {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centrar las tarjetas horizontalmente */
+    flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan en líneas */
+}
+
+.card {
+    width: calc(33.33% - 40px); /* Aproximadamente 1/3 del ancho menos el espacio entre tarjetas */
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+.card img {
+    width: 100%;
+    height: 230px; /* Para mantener la proporción de aspecto de la imagen */
+}
+
+/* Media query para ajustar el diseño en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 40px); /* Aproximadamente 1/2 del ancho menos el espacio entre tarjetas */
+    }
+}
+
+/* Media query para ajustar el diseño en pantallas aún más pequeñas */
+@media (max-width: 480px) {
+    .card {
+        width: calc(100% - 40px); /* Ancho completo menos el espacio entre tarjetas */
+    }
+}
+.card .contenido{
+    padding: 15px;
+    text-align: center;
+}
+.card .contenido p{
+    line-height: 1.5;
+    color: black;
+
+}
+.card .contenido h3{
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+.card .contenido a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: #2fb4cc;
+    border: 1px solid #2fb4cc;
+    border-radius: 4px;
+    transition: all 400ms ease;
+    
+
+}
+.card .contenido a:hover{
+    background: #2fb4cc;
+    color: #ffffff;
+
+}
+
+/*Footer*/
+.pie-pagina{
+    margin-top: 8%;
+    width: 100%;
+    background-color: #000000;
+
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1.box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box img{
+    width: 250px;
+   
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 20px;
+
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+
+}
+.pie-pagina .grupo-1 .box a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #ffffff;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .box a:hover{
+    
+    background-color: #00c3ff;
+}
+
+.pie-pagina .grupo-2 {
+    background-color: #080c12;
+    padding: 15px 10px;
+    text-align: center;
+    color: #ffffff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 17px;
+}
+
+@media screen and (max-width: 800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px; /*Disminuye el margen de columna*/
+        padding: 35px 0px; /*El relleno del contenedor*/
+    }
+}
+
+
+/*seccion-3*/
+
+.seccion-3{
+    margin-top: 7%;
+    
+}
+.hr-container {
+    display: flex; /*Se utiliza para definir un contenedor como un contenedor flexible.*/
+    justify-content: center;
+    align-items: center;
+}
+hr {
+    height: 3px;
+    background-color: black;
+    width: 80%;
+    
+}
+.seccion-3 h3{
+    text-align: center;
+        
+}
+
+/*horario*/
+
+.horario {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Aumentamos la sombra */
+}
+
+.horario-titulo {
+  text-align: center; /* Centramos el título */
+  font-size: 1.8rem; /* Tamaño de letra más grande */
+  margin-bottom: 20px; /* Espacio inferior mayor */
+}
+
+.horario-lista {
+  list-style-type: none;
+  padding: 0;
+}
+
+.horario-lista li {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dia {
+  font-weight: bold;
+  width: 120px;
+  display: inline-block;
+  font-size: 1.2rem; /* Tamaño de letra más grande para los días */
+}
+
+.hora {
+  text-align: right;
+  flex-grow: 1;
+  margin-left: 20px;
+  font-size: 1.2rem; /* Tamaño de letra más grande para los horarios */
+}
